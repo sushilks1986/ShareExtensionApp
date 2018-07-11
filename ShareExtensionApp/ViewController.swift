@@ -20,7 +20,10 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let userDefault = UserDefaults(suiteName: "group.sushil.shareExtensionApp")
+        
+        // suitname must be same as in app groups in general capabilities
+        let appSuitename = "group.sushil.shareExtensionApp"
+        let userDefault = UserDefaults(suiteName: appSuitename)
        
         if let dict = userDefault?.value(forKey: "img") as? NSDictionary {
             if let imgData = dict.value(forKey: "imgData"){
